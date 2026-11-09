@@ -59,7 +59,7 @@ DATA.openers.forEach(o => DATA.subjects.forEach(s => DATA.pairs.forEach(([v, ob]
 let SPAGE = 0, CI = 0, RP = 0, ME = 0;
 
 /* ---------- Navigation ---------- */
-const VIEWS = {VIEW.home = () => `
+VIEW.home = () => `
   <div class="card" style="text-align:center; padding:35px 20px;">
     <h1>🌟 Richard Fun English Lab AI</h1>
     <h3>Learn • Speak • Sing • Play</h3>
