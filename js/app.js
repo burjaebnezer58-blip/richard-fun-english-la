@@ -59,7 +59,23 @@ DATA.openers.forEach(o => DATA.subjects.forEach(s => DATA.pairs.forEach(([v, ob]
 let SPAGE = 0, CI = 0, RP = 0, ME = 0;
 
 /* ---------- Navigation ---------- */
-const VIEWS = {
+const VIEWS = {VIEW.home = () => `
+  <div class="card" style="text-align:center; padding:35px 20px;">
+    <h1>🌟 Richard Fun English Lab AI</h1>
+    <h3>Learn • Speak • Sing • Play</h3>
+    <p>Welcome! Please choose how you want to use the app.</p>
+
+    <button class="btn" style="display:block;width:100%;margin:20px 0;padding:22px;font-size:20px;"
+      onclick="setRole('student')">
+      🎒 I AM A STUDENT
+    </button>
+
+    <button class="btn alt" style="display:block;width:100%;margin:20px 0;padding:22px;font-size:20px;"
+      onclick="setRole('teacher')">
+      👩‍🏫 I AM A TEACHER
+    </button>
+  </div>
+`;
   student: [
     ['home', '🏠 Home'],
     ['daily', '🗣️ Daily Speaking'],
