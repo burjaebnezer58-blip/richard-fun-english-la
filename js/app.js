@@ -196,7 +196,7 @@ window.addEventListener('hashchange', route);
 
 
 /* ---------- Views ---------- */
-const VIEW = {};VIEW.library = () => `
+VIEW.library = () => `
   <div class="card">
     <h2>📚 Complete English Learning Library</h2>
     <p>Learn English from Basic to Advanced levels.</p>
