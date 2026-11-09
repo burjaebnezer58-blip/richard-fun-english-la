@@ -58,7 +58,14 @@ const VIEWS = {
   teacher: [['home', '🏠 Home'], ['dash', '📊 Dashboard'], ['plan', '📝 Lesson Plans'], ['sheet', '📄 Worksheets'], ['assess', '🗓️ Monthly Assessment'], ['progress', '👩‍🏫 Progress Tracker']]
 };
 
-function route() {
+function route() {if (!roleChosen) {
+    $('#role').innerHTML = '';
+    $('#nav').innerHTML = '';
+    $('#app').innerHTML = VIEW.home();
+    window.scrollTo(0, 0);
+    return;
+  }
+              
   const k = location.hash.slice(1) || 'home';
   const list = VIEWS[S.role];
   const cur = list.some(x => x[0] === k) ? k : 'home';
