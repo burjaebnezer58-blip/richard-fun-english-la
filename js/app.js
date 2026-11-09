@@ -117,14 +117,13 @@ function route() {
     ' · <a href="#home" onclick="toggleRole()">switch</a>';
 
   $('#nav').innerHTML = list
-    .map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>)
+    .map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>)
     .join('');
 
   $('#app').innerHTML = VIEW[cur]();
   after(cur);
   window.scrollTo(0, 0);
 }
-function after(k) {
   if (k === 'games') gl();
   if (k === 'sentences') sRender();
   if (k === 'grammar') gchg();
