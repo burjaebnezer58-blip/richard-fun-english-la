@@ -78,17 +78,24 @@ window.addEventListener('hashchange', route);
 const VIEW = {};
 
 VIEW.home = () => {
-  const tiles = VIEWS[S.role].filter(x => x[0] !== 'home').map(([id, l]) => `<a class="tile" href="#${id}">${l}</a>`).join('');
-  return `<div class="card"><h2>Welcome, ${S.role === 'student' ? 'friend' : 'teacher'}! 👋</h2>
-    <p>Learn • Speak • Sing • Play. Pick an activity below.</p>
-    ${S.role === 'student' ? `<p><b>⭐ ${S.stars}</b> stars earned on this device</p>` : ''}</div>
-    <div class="card"><h2>Menu</h2><div class="grid">${tiles}</div></div>
-    <div class="card"><h3>Who is using the app?</h3>
-    <p>Students get fun activities. Teachers get lesson planning, worksheets, assessments and progress tracking.</p>
-    <button class="btn" onclick="setRole('student')">🎒 I am a Student</button>
-    <button class="btn alt" onclick="setRole('teacher')">👩‍🏫 I am a Teacher</button></div>`;
-};
+  return `
+    <div class="card" style="text-align:center; padding:35px 20px;">
+      <h1>🌟 Richard Fun English Lab AI</h1>
+      <h3>Learn • Speak • Sing • Play</h3>
+      <p>Welcome! Please choose how you want to use the app.</p>
 
+      <button class="btn" style="display:block; width:100%; margin:20px 0; padding:22px; font-size:20px;"
+        onclick="setRole('student')">
+        🎒 I AM A STUDENT
+      </button>
+
+      <button class="btn alt" style="display:block; width:100%; margin:20px 0; padding:22px; font-size:20px;"
+        onclick="setRole('teacher')">
+        👩‍🏫 I AM A TEACHER
+      </button>
+    </div>
+  `;
+};
 VIEW.daily = () => {
   const d = pick(DATA.daily, day());
   return `<div class="card"><h2>🗣️ Today's Speaking Activity</h2>
