@@ -84,13 +84,30 @@ const VIEWS = {
   ]
 };
 
-function route() {if (!roleChosen) {
+function route() {
+  if (!roleChosen) {
     $('#role').innerHTML = '';
     $('#nav').innerHTML = '';
     $('#app').innerHTML = VIEW.home();
-    window.scrollTo(0, 0);
     return;
   }
+
+  const k = location.hash.slice(1) || 'home';
+  const list = VIEWS[S.role];
+  const cur = list.some(x => x[0] === k) ? k : 'home';
+
+  $('#role').innerHTML =
+    (S.role === 'student' ? '🎒 Student mode' : '👩‍🏫 Teacher mode') +
+    ' · <a href="#home" onclick="toggleRole()">switch</a>';
+
+  $('#nav').innerHTML = list
+    .map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>)
+    .join('');
+
+  $('#app').innerHTML = VIEW[cur]();
+  after(cur);
+  window.scrollTo(0, 0);
+}
               
   const k = location.hash.slice(1) || 'home';
   const list = VIEWS[S.role];
