@@ -101,64 +101,7 @@ VIEW.home = () => `
   ]
 };
 
-function route() {
-  if (!roleChosen) {
-    $('#role').innerHTML = '';
-    $('#nav').innerHTML = '';
-    $('#app').innerHTML = VIEW.home();
-    return;
-  }
 
-  const k = location.hash.slice(1) || 'home';
-  const list = VIEWS[S.role];
-  const cur = list.some(x => x[0] === k) ? k : 'home';
-
-  $('#role').innerHTML =
-    (S.role === 'student' ? '🎒 Student mode' : '👩‍🏫 Teacher mode') +
-    ' · <a href="#home" onclick="toggleRole()">switch</a>';
-
-  $('#nav').innerHTML = list
-    .map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>)
-    .join('');
-
-  $('#app').innerHTML = VIEW[cur]();
-  after(cur);
-  window.scrollTo(0, 0);
-}
-  if (k === 'games') gl();
-  if (k === 'sentences') sRender();
-  if (k === 'grammar') gchg();
-}
-
-/* ---------- Navigation ---------- */
-
-const VIEW = {};
-
-const VIEWS = {
-  student: [
-    ['home', '🏠 Home'],
-    ['daily', '🗣️ Daily Speaking'],
-    ['games', '🎲 500 Games'],
-    ['sentences', '💬 1,000 Sentences'],
-    ['phonics', '🔤 Phonics A–Z'],
-    ['grammar', '✏️ Grammar'],
-    ['vocab', '📚 Vocabulary'],
-    ['convo', '🤝 Conversation'],
-    ['roleplay', '🎭 Role-Play'],
-    ['weekly', '🏆 Weekly Challenge'],
-    ['flash', '🃏 Flashcards'],
-    ['library', '📚 Complete English Library']
-  ],
-
-  teacher: [
-    ['home', '🏠 Home'],
-    ['dash', '📊 Dashboard'],
-    ['plan', '📝 Lesson Plans'],
-    ['sheet', '📄 Worksheets'],
-    ['assess', '🗓️ Monthly Assessment'],
-    ['progress', '👩‍🏫 Progress Tracker']
-  ]
-};
 
 function route() {
   if (!roleChosen) {
