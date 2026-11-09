@@ -117,7 +117,7 @@ function route() {
     ' · <a href="#home" onclick="toggleRole()">switch</a>';
 
   $('#nav').innerHTML = list
-    .map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>)
+    .map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>).map(([id, l]) => <a href="#${id}" class="${id === cur ? 'on' : ''}">${l}</a>)
     .join('');
 
   $('#app').innerHTML = VIEW[cur]();
