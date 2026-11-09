@@ -11,6 +11,7 @@ function load() {
 }
 function save() { try { localStorage.setItem('rfel2', JSON.stringify(S)); } catch (e) {} }
 let S = load();
+let roleChosen = false;
 
 /* ---------- Helpers ---------- */
 function toast(m) { const t = $('#toast'); t.textContent = m; t.style.display = 'block'; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = 'none', 1800); }
