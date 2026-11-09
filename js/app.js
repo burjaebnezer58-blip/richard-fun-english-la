@@ -22,7 +22,13 @@ function speak(text) {
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-say]'); if (b) speak(b.dataset.say); });
 function done() { S.stars++; save(); toast('⭐ Star earned! Well done!'); }
-function setRole(r) { S.role = r; save(); location.hash = 'home'; route(); }
+function setRole(r) {
+  S.role = r;
+  roleChosen = true;
+  save();
+  location.hash = 'home';
+  route();
+}
 function toggleRole() { setRole(S.role === 'student' ? 'teacher' : 'student'); }
 function classSel(id) { return `<select id="${id}">${[1,2,3,4,5,6,7,8,9,10].map(i => `<option value="${i}">Class ${i}</option>`).join('')}</select>`; }
 const avgOf = s => s.scores.length ? s.scores.reduce((a, x) => a + x.avg, 0) / s.scores.length : 0;
