@@ -75,18 +75,29 @@ function after(k) {
 window.addEventListener('hashchange', route);
 
 /* ---------- Views ---------- */
-const VIEW = {};
-
-VIEW.home = () => {
-  const tiles = VIEWS[S.role].filter(x => x[0] !== 'home').map(([id, l]) => `<a class="tile" href="#${id}">${l}</a>`).join('');
-  return `<div class="card"><h2>Welcome, ${S.role === 'student' ? 'friend' : 'teacher'}! 👋</h2>
-    <p>Learn • Speak • Sing • Play. Pick an activity below.</p>
-    ${S.role === 'student' ? `<p><b>⭐ ${S.stars}</b> stars earned on this device</p>` : ''}</div>
-    <div class="card"><h2>Menu</h2><div class="grid">${tiles}</div></div>
-    <div class="card"><h3>Who is using the app?</h3>
-    <p>Students get fun activities. Teachers get lesson planning, worksheets, assessments and progress tracking.</p>
-    <button class="btn" onclick="setRole('student')">🎒 I am a Student</button>
-    <button class="btn alt" onclick="setRole('teacher')">👩‍🏫 I am a Teacher</button></div>`;
+const VIEWS = {
+  student: [
+    ['home', '🏠 Home'],
+    ['daily', '🗣️ Daily Speaking'],
+    ['games', '🎲 500 Games'],
+    ['sentences', '💬 1,000 Sentences'],
+    ['phonics', '🔤 Phonics A–Z'],
+    ['grammar', '✏️ Grammar'],
+    ['vocab', '📚 Vocabulary'],
+    ['convo', '🤝 Conversation'],
+    ['roleplay', '🎭 Role-Play'],
+    ['weekly', '🏆 Weekly Challenge'],
+    ['flash', '🃏 Flashcards'],
+    ['library', '📚 Complete English Library']
+  ],
+  teacher: [
+    ['home', '🏠 Home'],
+    ['dash', '📊 Dashboard'],
+    ['plan', '📝 Lesson Plans'],
+    ['sheet', '📄 Worksheets'],
+    ['assess', '🗓️ Monthly Assessment'],
+    ['progress', '👩‍🏫 Progress Tracker']
+  ]
 };
 
 VIEW.daily = () => {
