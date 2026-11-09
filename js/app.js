@@ -77,31 +77,6 @@ VIEW.home = () => `
     </button>
   </div>
 `;
-  student: [
-    ['home', '🏠 Home'],
-    ['daily', '🗣️ Daily Speaking'],
-    ['games', '🎲 500 Games'],
-    ['sentences', '💬 1,000 Sentences'],
-    ['phonics', '🔤 Phonics A–Z'],
-    ['grammar', '✏️ Grammar'],
-    ['vocab', '📚 Vocabulary'],
-    ['convo', '🤝 Conversation'],
-    ['roleplay', '🎭 Role-Play'],
-    ['weekly', '🏆 Weekly Challenge'],
-    ['flash', '🃏 Flashcards'],
-    ['library', '📚 Complete English Library']
-  ],
-  teacher: [
-    ['home', '🏠 Home'],
-    ['dash', '📊 Dashboard'],
-    ['plan', '📝 Lesson Plans'],
-    ['sheet', '📄 Worksheets'],
-    ['assess', '🗓️ Monthly Assessment'],
-    ['progress', '👩‍🏫 Progress Tracker']
-  ]
-};
-
-
 
 function route() {
   if (!roleChosen) {
