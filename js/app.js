@@ -1,3 +1,4 @@
+
 /* Richard Fun English Lab AI - application logic (plain JavaScript, no libraries) */
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
