@@ -83,7 +83,64 @@ function after(k) {
 window.addEventListener('hashchange', route);
 
 /* ---------- Views ---------- */
-const VIEW = {};
+const VIEW = {};VIEW.library = () => `
+  <div class="card">
+    <h2>📚 Complete English Learning Library</h2>
+    <p>Learn English from Basic to Advanced levels.</p>
+  </div>
+
+  <div class="card">
+    <h3>🔤 1. Basic English</h3>
+    <ul>
+      <li>Alphabet and Phonics</li>
+      <li>Vowels and Consonants</li>
+      <li>Nouns and Pronouns</li>
+      <li>Articles and Simple Sentences</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>✏️ 2. Grammar</h3>
+    <ul>
+      <li>Parts of Speech</li>
+      <li>All Tenses</li>
+      <li>Active and Passive Voice</li>
+      <li>Direct and Indirect Speech</li>
+      <li>Prepositions and Conjunctions</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🗣️ 3. Spoken English</h3>
+    <ul>
+      <li>Daily Conversations</li>
+      <li>Self Introduction</li>
+      <li>Common English Expressions</li>
+      <li>Public Speaking</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>📖 4. Reading and Writing</h3>
+    <ul>
+      <li>Reading Comprehension</li>
+      <li>Paragraph Writing</li>
+      <li>Essay Writing</li>
+      <li>Story Writing</li>
+      <li>Creative Writing</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🎧 5. Listening and Pronunciation</h3>
+    <ul>
+      <li>English Sounds</li>
+      <li>Word Stress</li>
+      <li>Intonation</li>
+      <li>Listening Practice</li>
+    </ul>
+  </div>
+`;
 
 VIEW.home = () => {
   return `
